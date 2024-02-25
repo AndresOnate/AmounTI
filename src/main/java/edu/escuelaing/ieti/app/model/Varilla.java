@@ -101,4 +101,16 @@ public abstract class Varilla implements Serializable {
 		}
 		return false;
 	}
+
+	@Override
+	public String toString() {
+		return "Varilla{" +
+				"longitud=" + longitud +
+				", largo=" + largo +
+				", alto=" + alto +
+				", gancho=" + gancho +
+				", calibre=" + calibre +
+				", peso=" + peso +
+				'}';
+	}
 }

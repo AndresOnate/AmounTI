@@ -56,7 +56,7 @@ public class Cantidades implements Serializable{
 	private Item itemActual;
 	private String nombre;
 	private File file;
-	private Cantidades instancia = this;
+	//private Cantidades instancia = this;
 	
 	
 	/**
@@ -1456,15 +1456,26 @@ public class Cantidades implements Serializable{
 		return itemsCantidades;
 	}
 
-	public Cantidades getInstancia() {
-		return instancia;
-	}
 
-	public void setInstancia(Cantidades instancia) {
-		this.instancia = instancia;
-	}
+
 	
 	public void setItemCantidad (Item item, int cant) {
 		itemsCantidades.put(item, cant);
+	}
+
+	@Override
+	public String toString() {
+		return "Cantidades{" +
+				"varillas=" + varillas +
+				", elementos=" + elementos +
+				", items=" + items +
+				", itemsCantidades=" + itemsCantidades +
+				", pesoUnitarioItem=" + pesoUnitarioItem +
+				", pesoTotalItem=" + pesoTotalItem +
+				", elementoActual=" + elementoActual +
+				", itemActual=" + itemActual +
+				", nombre='" + nombre + '\'' +
+				", file=" + file +
+				'}';
 	}
 }

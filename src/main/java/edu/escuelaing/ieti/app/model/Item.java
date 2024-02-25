@@ -223,5 +223,21 @@ public class Item implements Serializable{
 	public void setNombre (String nuevoNombre) {
 		nombre = nuevoNombre;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Item{" +
+				"nombre='" + nombre + '\'' +
+				", elementos=" + elementos +
+				", elementosEnOrden=" + elementosEnOrden +
+				", pesoUnitarioElemento=" + pesoUnitarioElemento +
+				", pesoTotalElemento=" + pesoTotalElemento +
+				", pesoPorCalibreItem=" + pesoPorCalibreItem +
+				", varillasClasificadas=" + varillasClasificadas +
+				", cantidadesTotalesVarillas=" + cantidadesTotalesVarillas +
+				", varillasClasificadasSinCant=" + varillasClasificadasSinCant +
+				", pesoTotal=" + pesoTotal +
+				", edicion=" + edicion +
+				'}';
+	}
 }

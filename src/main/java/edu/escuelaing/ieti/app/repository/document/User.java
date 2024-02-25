@@ -1,13 +1,15 @@
 package edu.escuelaing.ieti.app.repository.document;
 
 import edu.escuelaing.ieti.app.controller.user.UserDto;
+import edu.escuelaing.ieti.app.exception.ProyectoNoExiste;
+import edu.escuelaing.ieti.app.model.Cantidades;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.index.Indexed;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Date;
-import java.util.List;
+
+
+import java.util.*;
 
 @Document
 public class User
@@ -27,6 +29,9 @@ public class User
     List<RoleEnum> roles;
 
     Date createdAt;
+
+    @Transient
+    HashMap<String, Cantidades> cantidadesDeUsuario = new HashMap<String, Cantidades>();
 
     public User()
     {
@@ -67,6 +72,22 @@ public class User
     public Date getCreatedAt()
     {
         return createdAt;
+    }
+
+    public HashMap<String, Cantidades> getCantidadesDeUsuario() {
+        return cantidadesDeUsuario;
+    }
+
+    public Cantidades getProyectoPorNombre(String nombreProyecto) throws ProyectoNoExiste {
+        if (cantidadesDeUsuario.containsKey(nombreProyecto)) {
+            return cantidadesDeUsuario.get(nombreProyecto);
+        }
+        throw new ProyectoNoExiste("No existe un proyecto con el nombre: " + nombreProyecto);
+    }
+
+    public Cantidades addProyecto(String nombreProyecto)  {
+        cantidadesDeUsuario.put(nombreProyecto, new Cantidades(nombreProyecto));
+        return cantidadesDeUsuario.get(nombreProyecto);
     }
 
     public String getPasswordHash()

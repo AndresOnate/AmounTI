@@ -201,4 +201,20 @@ public class Elemento implements Serializable{
 	public HashMap<Integer, ArrayList<Varilla>> getVarillasClasificadas () {
 		return varillasClasificadas;
 	}
+
+	@Override
+	public String toString() {
+		return "Elemento{" +
+				"nombre='" + nombre + '\'' +
+				", varillas=" + varillas +
+				", varillasEnOrden=" + varillasEnOrden +
+				", pesoUnitarioVarilla=" + pesoUnitarioVarilla +
+				", pesoPorTipoVarilla=" + pesoPorTipoVarilla +
+				", pesosPorCalibre=" + pesosPorCalibre +
+				", varillasClasificadas=" + varillasClasificadas +
+				", cantidadesTotalesVarillas=" + cantidadesTotalesVarillas +
+				", pesoTotal=" + pesoTotal +
+				", edicion=" + edicion +
+				'}';
+	}
 }

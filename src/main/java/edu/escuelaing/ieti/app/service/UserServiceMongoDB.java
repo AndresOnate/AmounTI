@@ -1,6 +1,9 @@
 package edu.escuelaing.ieti.app.service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import edu.escuelaing.ieti.app.controller.user.UserDto;
+import edu.escuelaing.ieti.app.exception.ProyectoNoExiste;
+import edu.escuelaing.ieti.app.model.Cantidades;
 import edu.escuelaing.ieti.app.repository.UserRepository;
 import edu.escuelaing.ieti.app.repository.document.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +26,27 @@ public class UserServiceMongoDB implements UserService
     public User create(UserDto userDto )
     {
         return userRepository.save( new User( userDto ) );
+    }
+
+    @Override
+    public User addProject(String id, String projectName) throws JsonProcessingException {
+        Optional<User> optionalUser = userRepository.findById(id);
+        System.out.println(optionalUser.isPresent());
+        if ( optionalUser.isPresent() )
+        {
+            User user = optionalUser.get();
+            user.addProyecto(projectName);
+            return userRepository.save(user);
+        }
+        return null;
+    }
+
+    @Override
+    public Cantidades findProjectByUser(String projectName, String id) throws ProyectoNoExiste {
+        User user  = userRepository.findById(id).get();
+        Cantidades project = user.getProyectoPorNombre(projectName);
+        return project;
+
     }
 
     @Override
