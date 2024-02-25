@@ -12,14 +12,12 @@ import java.util.List;
 @RequestMapping( "/v1/user" )
 public class UserController
 {
-
     private final UserService userService;
 
     public UserController( @Autowired UserService userService )
     {
         this.userService = userService;
     }
-
 
     @GetMapping
     public List<User> all()
