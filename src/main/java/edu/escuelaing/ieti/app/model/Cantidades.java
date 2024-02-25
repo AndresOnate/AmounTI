@@ -16,6 +16,7 @@ import java.util.*;
 
 import edu.escuelaing.ieti.app.exception.*;
 
+
 import javax.swing.JOptionPane;
 
 import com.spire.doc.*;
@@ -36,11 +37,15 @@ import com.spire.doc.fields.ShapeObject;
 import com.spire.doc.fields.TextBox;
 import com.spire.doc.fields.TextRange;
 
+
+
+
 /**
  * Cantidades es las clase principal que contiene elementos e items
  * @author Santiago Arévalo Rojas
  * @version 1.0. (12 Octubre 2022)
  */
+
 public class Cantidades implements Serializable{
 	/**
 	 * 
@@ -267,7 +272,7 @@ public class Cantidades implements Serializable{
 	
 	/**
 	 * Busca el item que se va a editar para proceder a setteralo como el nuevo item actual
-	 * @param nombreItem
+	 * @param
 	 */
 	public void editarItem (Item editar) {
 		ponerItemActual(editar);

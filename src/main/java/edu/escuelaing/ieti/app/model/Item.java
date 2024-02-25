@@ -1,5 +1,7 @@
 package edu.escuelaing.ieti.app.model;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.io.Serializable;
 import java.util.*;
 /**
@@ -7,7 +9,8 @@ import java.util.*;
  * @author Santiago Arévalo Rojas
  * @version 1.0. (12 Octubre 2022)
  */
-public class Item implements Serializable{
+
+public class Item {
 	/**
 	 * 
 	 */

@@ -30,7 +30,7 @@ public class User
 
     Date createdAt;
 
-    @Transient
+
     HashMap<String, Cantidades> cantidadesDeUsuario = new HashMap<String, Cantidades>();
 
     public User()

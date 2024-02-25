@@ -9,6 +9,7 @@ import java.util.*;
  * @author Santiago Arévalo Rojas
  * @version 1.0. (12 Octubre 2022)
  */
+
 public abstract class Varilla implements Serializable {
 	/**
 	 * 
