@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping( "/v1/user" )
+@RequestMapping( "/v1/users" )
 public class UserController
 {
     private final UserService userService;
@@ -23,15 +23,15 @@ public class UserController
     }
 
     @GetMapping
-    public List<User> all()
+    public ResponseEntity<List<User>> all()
     {
-        return userService.all();
+        return ResponseEntity.ok(userService.all());
     }
 
     @GetMapping( "/{id}" )
-    public User findById( @PathVariable String id )
+    public ResponseEntity<User> findById( @PathVariable String id )
     {
-        return userService.findById( id );
+        return ResponseEntity.ok(userService.findById(id));
     }
 
 
@@ -40,20 +40,6 @@ public class UserController
     {
         return ResponseEntity.ok( userService.create( userDto ) );
     }
-
-    @PostMapping("/{id}/projects")
-    public ResponseEntity<User> addProject(@PathVariable String id, @RequestBody String name ) throws JsonProcessingException {
-        System.out.println("Entré ");
-        System.out.println(name);
-        return ResponseEntity.ok( userService.addProject(id, name) );
-    }
-
-    @GetMapping( "/{id}/{projectName}" )
-    public ResponseEntity<Cantidades> findById(@PathVariable String id, @PathVariable String projectName) throws ProyectoNoExiste {
-
-        return ResponseEntity.ok(userService.findProjectByUser(projectName, id ));
-    }
-
 
     @PutMapping( "/{id}" )
     public ResponseEntity<User> update( @RequestBody UserDto userDto, @PathVariable String id )

@@ -62,7 +62,9 @@ public class Cantidades implements Serializable{
 	private String nombre;
 	private File file;
 	//private Cantidades instancia = this;
-	
+
+	public Cantidades () {
+	}
 	
 	/**
 	 * Constructor de objetos de la clase Cantidades
@@ -1457,13 +1459,6 @@ public class Cantidades implements Serializable{
 		return items;
 	}
 	
-	public HashMap<Item, Integer> getItemCantidades () {
-		return itemsCantidades;
-	}
-
-
-
-	
 	public void setItemCantidad (Item item, int cant) {
 		itemsCantidades.put(item, cant);
 	}
@@ -1482,5 +1477,65 @@ public class Cantidades implements Serializable{
 				", nombre='" + nombre + '\'' +
 				", file=" + file +
 				'}';
+	}
+
+	public ArrayList<Varilla> getVarillas() {
+		return varillas;
+	}
+
+	public void setVarillas(ArrayList<Varilla> varillas) {
+		this.varillas = varillas;
+	}
+
+	public void setElementos(ArrayList<Elemento> elementos) {
+		this.elementos = elementos;
+	}
+
+	public void setItems(ArrayList<Item> items) {
+		this.items = items;
+	}
+
+	public HashMap<Item, Integer> getItemsCantidades() {
+		return itemsCantidades;
+	}
+
+	public void setItemsCantidades(HashMap<Item, Integer> itemsCantidades) {
+		this.itemsCantidades = itemsCantidades;
+	}
+
+	public HashMap<Item, Double> getPesoUnitarioItem() {
+		return pesoUnitarioItem;
+	}
+
+	public void setPesoUnitarioItem(HashMap<Item, Double> pesoUnitarioItem) {
+		this.pesoUnitarioItem = pesoUnitarioItem;
+	}
+
+	public HashMap<Item, Double> getPesoTotalItem() {
+		return pesoTotalItem;
+	}
+
+	public void setPesoTotalItem(HashMap<Item, Double> pesoTotalItem) {
+		this.pesoTotalItem = pesoTotalItem;
+	}
+
+	public void setElementoActual(Elemento elementoActual) {
+		this.elementoActual = elementoActual;
+	}
+
+	public void setItemActual(Item itemActual) {
+		this.itemActual = itemActual;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public File getFile() {
+		return file;
+	}
+
+	public void setFile(File file) {
+		this.file = file;
 	}
 }
