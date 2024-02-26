@@ -28,4 +28,6 @@ public interface UserService
     User update( UserDto userDto, String id );
     ArrayList<HashMap<String, Cantidades>> allProjects ();
     HashMap<String, Cantidades> allProjectsByUser (String id);
+
+    Cantidades updateNameProject(String id, String nameProject, String newNameProject)throws ProyectoNoExiste;
 }

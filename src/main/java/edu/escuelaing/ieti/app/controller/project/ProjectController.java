@@ -6,6 +6,7 @@ import edu.escuelaing.ieti.app.model.Cantidades;
 import edu.escuelaing.ieti.app.repository.document.User;
 import edu.escuelaing.ieti.app.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -51,6 +52,15 @@ public class ProjectController {
         System.out.println("Entré ");
         //System.out.println(project.getNombre());
         return ResponseEntity.ok(userService.addProject(id, projectName));
+    }
+
+    @PutMapping("/{id}/{projectName}")
+    public ResponseEntity<?> updateNameProject(@PathVariable String id, @PathVariable String projectName, @RequestBody String newNameProject){
+        try{
+            return ResponseEntity.ok(userService.updateNameProject(id, projectName, newNameProject));
+        } catch (ProyectoNoExiste e) {
+            return new ResponseEntity<>(e.getMessage(),HttpStatus.NOT_FOUND);
+        }
     }
 
 

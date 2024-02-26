@@ -127,4 +127,13 @@ public class UserServiceMongoDB implements UserService
         User user = findById(id);
         return user.getCantidadesDeUsuario();
     }
+
+    public Cantidades updateNameProject (String id, String projectName, String newNameProject) throws ProyectoNoExiste{
+        User user = findById(id);
+        Cantidades project = user.getProyectoPorNombre(projectName);
+        project.setNombre(newNameProject);
+        user.updateNameProject(projectName, project);
+        userRepository.save(user);
+        return project;
+    }
 }

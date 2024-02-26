@@ -112,4 +112,9 @@ public class User
         }*/
     }
 
+    public void updateNameProject (String projectName, Cantidades newProject){
+        cantidadesDeUsuario.remove(projectName);
+        cantidadesDeUsuario.put(newProject.getNombre(), newProject);
+    }
+
 }
