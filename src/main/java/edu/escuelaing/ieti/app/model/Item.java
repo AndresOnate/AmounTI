@@ -6,8 +6,7 @@ import java.io.Serializable;
 import java.util.*;
 /**
  * Item es una clase que representa los grupos o items que contienen elementos junto con la cantidad
- * @author Santiago Arévalo Rojas
- * @version 1.0. (12 Octubre 2022)
+ * @version 1.0. (26 de Febrero 2024)
  */
 
 public class Item {

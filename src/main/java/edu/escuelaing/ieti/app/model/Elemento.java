@@ -7,8 +7,7 @@ import java.util.*;
 /**
  * Elemento es una clase que representa los elementos que contienen todo el acero correspondiente,
  * tanto transversal como longitudinal
- * @author Santiago Arévalo Rojas
- * @version 1.0. (12 Octubre 2022)
+ * @version 1.0. (26 de Febrero 2024)
  */
 
 public class Elemento implements Serializable{

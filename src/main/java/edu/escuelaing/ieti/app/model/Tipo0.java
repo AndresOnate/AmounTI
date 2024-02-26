@@ -4,8 +4,7 @@ import java.io.Serializable;
 
 /**
  * Representa una varilla de tipo 0 o sea sin ningún doblez o lisa
- * @author Santiago Arévalo Rojas
- * @version 1.0. (12 Octubre 2022)
+ * @version 1.0. (26 de Febrero 2024)
  */
 public class Tipo0 extends Varilla implements Serializable{
 	/**

@@ -42,8 +42,7 @@ import com.spire.doc.fields.TextRange;
 
 /**
  * Cantidades es las clase principal que contiene elementos e items
- * @author Santiago Arévalo Rojas
- * @version 1.0. (12 Octubre 2022)
+ * @version 1.0. (26 de Febrero 2024)
  */
 
 public class Cantidades implements Serializable{

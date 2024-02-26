@@ -6,8 +6,7 @@ import java.util.*;
  * Varilla es una clase abstracta ya que hay 8 tipos de varillas que van a heredar de esta
  * cada una tiene un comportamiento distinto para calcular sus longitudes, es por esto que no
  * se puede instanciar una varilla sin saber su tipo
- * @author Santiago Arévalo Rojas
- * @version 1.0. (12 Octubre 2022)
+ * @version 1.0. (26 de Febrero 2024)
  */
 
 public abstract class Varilla implements Serializable {
